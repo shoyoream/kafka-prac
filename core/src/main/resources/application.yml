@@ -1,0 +1,41 @@
+spring:
+    main:
+        allow-bean-definition-overriding: true
+    profiles:
+        active: local
+        group:
+            local:
+    servlet:
+        multipart:
+            max-file-size: 100MB
+            max-request-size: 100MB
+
+---
+
+spring:
+    mvc:
+        servlet:
+            load-on-startup: 1
+    config:
+        activate:
+            on-profile: local
+    batch:
+        jdbc:
+            initialize-schema: always
+        job:
+            enabled: false
+    datasource:
+        url: jdbc:mysql://localhost:3306/kafka_prac?serverTimezone=Asia/Seoul
+        username: kafka-user
+        password: kafka-user
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        open-in-view: false
+        properties:
+            hibernate:
+                format_sql: true
+                default_batch_fetch_size: 1000
