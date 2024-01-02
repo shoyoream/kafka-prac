@@ -19,11 +19,10 @@ spring:
     config:
         activate:
             on-profile: local
-    batch:
-        jdbc:
-            initialize-schema: always
-        job:
-            enabled: false
+    kafka:
+        consumer:
+            bootstrap-servers: localhost:9092
+            group-id:
     datasource:
         url: jdbc:mysql://localhost:3306/kafka_prac?serverTimezone=Asia/Seoul
         username: kafka-user
