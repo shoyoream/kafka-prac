@@ -21,8 +21,8 @@ spring:
             on-profile: local
     kafka:
         consumer:
-            bootstrap-servers: localhost:9092
-            group-id:
+            bootstrap-servers: ${KAFKA_INSTANCE}
+            group-id: group_1
     datasource:
         url: jdbc:mysql://localhost:3306/kafka_prac?serverTimezone=Asia/Seoul
         username: kafka-user
