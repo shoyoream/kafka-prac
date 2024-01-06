@@ -14,6 +14,11 @@ import org.springframework.kafka.core.ProducerFactory
 class KafkaProducerConfig(
     @Value("\${spring.kafka.consumer.bootstrap-servers}") private val bootStrapSever: String
 ) {
+    companion object {
+        private const val TOPIC_NAME = "test"
+        private const val MESSAGE_NAME = "test message"
+    }
+
     @Bean
     fun producerFactory(): ProducerFactory<String, Any> {
         val config: MutableMap<String, Any> = HashMap()
