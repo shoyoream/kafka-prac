@@ -21,6 +21,7 @@ class KafkaConsumerConfig(
         config[ConsumerConfig.GROUP_ID_CONFIG] = groupId
         config[ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG] = StringDeserializer::class.java
         config[ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG] = StringDeserializer::class.java
+        config[ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG] = false
 
         return DefaultKafkaConsumerFactory(config)
     }
